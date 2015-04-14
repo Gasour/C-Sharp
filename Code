@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Collections;
+
+namespace Sportka
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> uzivatel;
+            List<int> generovano;
+            Random nahodne;
+
+            uzivatel = new List<int>();
+            generovano = new List<int>();
+            nahodne = new Random();
+
+            Console.WriteLine("Zadejte 6 čísel od 1 do 49:");
+
+            for (int i =0; i < 6; i++)
+
+
+        {
+                int pomocna = Convert.ToInt32(Console.ReadLine());
+                if (pomocna >=1 && pomocna <= 49)
+                {
+                    uzivatel.Add(pomocna);
+                    }
+                else
+                    {
+
+            Console.WriteLine("Chyba zadání - opakujte");
+            i--;
+                }
+            }
+        }
+    }
+}
