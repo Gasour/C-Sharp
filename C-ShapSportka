@@ -20,22 +20,57 @@ namespace Sportka
 
             Console.WriteLine("Zadejte 6 čísel od 1 do 49:");
 
-            for (int i =0; i < 6; i++)
-
-
-        {
+            for (int i = 0; i < 6; i++)
+            {
                 int pomocna = Convert.ToInt32(Console.ReadLine());
-                if (pomocna >=1 && pomocna <= 49)
+                if (pomocna >= 1 && pomocna <= 49)
                 {
+                    if(uzivatel.Contains(pomocna))
+                    {
+                        Console.WriteLine("Toto číslo bylo zadáno - opakujte");
+                        i--;
+                    }
+                    else
+                    {
+                        
                     uzivatel.Add(pomocna);
                     }
-                else
-                    {
-
-            Console.WriteLine("Chyba zadání - opakujte");
-            i--;
                 }
-            }
+                else
+                {
+
+                    Console.WriteLine("Chyba zadání - opakujte");
+                    i--;
+                      }
+                    }
+                    Console.WriteLine("");
+                    for (int j = 0; j <6; j++)
+                    {
+                        generovano.Add(nahodne.Next(1,49));
+                    }
+                    Console.WriteLine("Vylosovaná čísla");
+                    foreach (int prvek in generovano)
+                    {
+                        Console.Write(prvek + " ");
+                        
+                    }
+
+                    Console.WriteLine("");
+                    for (int k = 0; k < 6;k++ )
+                    {
+                        
+                        if (generovano.Contains(uzivatel[k]))
+                        {
+                            Console.WriteLine("Trefa!! :" + uzivatel[k]);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Smula!! :" + uzivatel[k]);
+                        }
+                            
+                    }
+
+                    Console.ReadKey();
         }
     }
 }
