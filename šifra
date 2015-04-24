@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace šifra
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+    string volba;
+    string co;
+    Console.WriteLine("Zadej sifra nebo text ");
+    Console.WriteLine("sifra....prevadi text na sifru ");
+    Console.WriteLine("text....prevadi sifru na text ");
+    co = Console.ReadLine();
+    switch (co)
+    {
+    case "sifra":
+    
+    Console.WriteLine("zadejte text");
+    volba =(Console.ReadLine());
+    Console.Clear();
+    Console.WriteLine("Původní zpráva: {0}", volba);
+    string zprava = "";
+    int posun = 1;
+    
+
+    foreach(char c in volba)
+    {
+    int i = (int)c;
+    i += posun;
+    char znak = (char)i;
+    zprava += znak;
+    }
+
+    Console.WriteLine("Zašifrovaná zpráva: {0}", zprava);
+
+    break;
+    case "text":
+    Console.WriteLine("zadejte text");
+    volba = (Console.ReadLine());
+    Console.Clear();
+    Console.WriteLine("Šifrovaná zpráva: {0}", volba);
+    string zpravab = "";
+    int posunb = -1;
+
+
+    foreach (char c in volba)
+    {
+        int i = (int)c;
+        i += posunb;
+        char znak = (char)i;
+        zpravab += znak;
+    }
+
+    Console.WriteLine("zpráva: {0}", zpravab);
+    break;
+   }
+
+
+
+    Console.ReadKey();
+        }
+        
+    }
+}
