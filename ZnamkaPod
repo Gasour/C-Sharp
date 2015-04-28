@@ -3,34 +3,69 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Znamky
+namespace Matice
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Spočítám ti průměr známek. Kolik známek zadáš?");
-            int pocet = int.Parse(Console.ReadLine());
-            int[] cisla = new int[pocet];
-            for (int i = 0; i < pocet; i++)
+            int[,] maticeA, maticeB, vysledek;
+
+            maticeA = new int[2, 3];
+            maticeB = new int[2, 3];
+            vysledek = new int[2, 3];
+
+            Console.WriteLine("Zadejta matici A (2x3): ");
+       
+            for (int i = 0; i < 2; i++)
+                {
+
+                   for (int j = 0; j < 3; j++)
+                {
+
+                   
+                    maticeA[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+                }
+            Console.WriteLine("Zadejta matici B (2x3): ");
+
+            for (int i = 0; i < 2; i++)
             {
-                Console.Write("Zadejte {0}. číslo: ", i + 1);
 
-                if (cisla>5)
-                {
-                    Console.WriteLine("Zadávejte čísla jen od 1 do 5");
-                    i--;
-                }
-                else
+                for (int j = 0; j < 3; j++)
                 {
 
-                    cisla[i] = int.Parse(Console.ReadLine());   
-                }
 
-                
+                    maticeB[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
             }
-            Console.WriteLine("Průměr tvých známek je: {0}", cisla.Average());
-            Console.ReadKey();
-        }
-    }
-}
+            Console.WriteLine("Vysledek Matice C je");
+
+            for (int i = 0; i < 2; i++)
+            {
+
+                for (int j = 0; j < 3; j++)
+                {
+
+
+                    vysledek[i, j] = maticeA[i,j] + maticeB[i,j];
+                }
+            }
+
+
+            Console.WriteLine("");
+
+            for (int i = 0; i < 2; i++)
+            {
+
+                for (int j = 0; j < 3; j++)
+                {
+
+
+                    Console.Write(vysledek[i,j]+ "\t");
+                    
+
+                }
+                Console.WriteLine("");
+            }
+
