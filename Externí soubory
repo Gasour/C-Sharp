@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+namespace Extsoubory
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string zadani;
+            StreamWriter zapisovac;
+
+            zapisovac = new StreamWriter("Mujsoubor.txt");
+
+            Console.WriteLine("Zadejte větu");
+            zadani = Console.ReadLine();
+
+            try
+            {
+                zapisovac.WriteLine(zadani);
+                zapisovac.Close();
+                Console.WriteLine("Zapsáno");
+
+            }
+
+            catch (Exception e)
+            {
+                
+                Console.WriteLine("Chyba nezapsalo se nic" + e.Message);
+
+            }
+
+        }
+    }
+}
