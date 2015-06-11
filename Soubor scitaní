@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+
+namespace Soubor_
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            StreamReader cteni;
+            Double soucet;
+            string cislo;
+
+            try
+                {
+                    cteni = new StreamReader("Soubor.txt");
+                    soucet = 0;
+
+                    Console.WriteLine("Čísla v souboru");
+
+                    while (!cteni.EndOfStream)
+                    {
+
+                        cislo = cteni.ReadLine();
+                        Console.WriteLine(cislo);
+                        soucet = soucet + Convert.ToDouble(cislo);
+
+                    
+                   }
+
+                    Console.WriteLine("nSoučet těchto čísel ke: ");
+                    Console.WriteLine(soucet);
+                }
+
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            Console.ReadKey();
+        }
+
+    }
+}
